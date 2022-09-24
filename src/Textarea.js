@@ -1,8 +1,4 @@
-import { useState } from "react";
-
 export default function Textarea(props) {
-  const [value, setValue] = useState("");
-
   return (
     <div>
       <label htmlFor={props.id}>{props.label}</label>
@@ -10,9 +6,9 @@ export default function Textarea(props) {
         id={props.id}
         rows="10"
         cols="30"
-        value={value}
+        value={props.value}
         onChange={(event) => {
-          setValue(event.target.value);
+          props.onChange(event.target.value);
         }}
       />
     </div>
